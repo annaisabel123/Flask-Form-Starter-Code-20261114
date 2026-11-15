@@ -3,8 +3,13 @@
 {% block body %}
 	<h1>Success, thanks !</h1>
     <p>Here's what you posted:</p>
-    {{ name }}
+    name: {{ name }}
+    email: {{ email }}
+    pet: {{ pet }}
+    music: 
     <ul>
-        
+        {% for genre in music %}
+         <li>{{ genre }}</li>
+        {% endfor %}        
     </ul>
 {% endblock %}

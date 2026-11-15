@@ -1,48 +1,47 @@
-{% extends layout %}
+{% extends "layout.html" %}
 
-  {% block body %}
-	<header>
-		<h1>Flask Practice</h1>
-	</header>
-	<main>
-		<h2>Form</h2>
-		<img src="static/brodie-nap.jpg" alt="sleepy gray cat" width="200"/>
-		<form action="/submit" method="GET">
-			<fieldset>
-				<legend>Basic Questions</legend>
-				<p>
-					<label for="name">Name</label>
-					<input type="text" id="name" name="name" placeholder="Brodie" minlength="2" required >
-				</p>
-				<p>
-					<label for="email">Email</label>
-					<input type="email" id="email" name="email" placeholder="brodie@dawsoncollege.qc.ca" required>
-				</p>
-				<p>
-					<label for="pets">Pets</label>
-					<select id="pets" name="pets">
-						<option value="">Choose an option</option>
-						<option value="bird">Bird</option>
-						<option value="cat">Cat</option>
-						<option value="dog">Dog</option>
-						<option value="snake">Snake</option>
-					</select>
-				</p>
-			</fieldset>
-			<fieldset>
-				<legend>Pick from these music options</legend>
-				<label for="country"><input type="checkbox" id="country" name="music" value="country" checked /> Country</label>
-				<label for="jazz"><input type="checkbox" id="jazz" name="music" value="jazz"/> Jazz</label>
-				<label for="pop"><input type="checkbox" id="pop" name="music" value="pop"/> Pop</label>
-			</fieldset>
-			<button type="submit">Submit</button>
-		</form>
-	</main>
-	<footer>
-		<h2>Image attributions</h2>
-		<ul>
-			<li>Cat pictures by Lei Lopez, used with permission.</li>
-		</ul>
-	</footer>
-  {% endblock %}
-</html>
+	{% block body %}
+		<header>
+			<h1>Flask Practice</h1>
+		</header>
+		<main>
+			<h2>Form</h2>
+			<img src="static/brodie-nap.jpg" alt="sleepy gray cat" width="200"/>
+			<form action="/submit" method="POST">
+				<fieldset>
+					<legend>Basic Questions</legend>
+					<p>
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Brodie" minlength="2" required >
+					</p>
+					<p>
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="brodie@dawsoncollege.qc.ca" required>
+					</p>
+					<p>
+						<label for="pets">Pets</label>
+						<select id="pets" name="pets">
+							<option value="">Choose an option</option>
+							<option value="bird">Bird</option>
+							<option value="cat">Cat</option>
+							<option value="dog">Dog</option>
+							<option value="snake">Snake</option>
+						</select>
+					</p>
+				</fieldset>
+				<fieldset>
+					<legend>Pick from these music options</legend>
+					<label for="country"><input type="checkbox" id="country" name="music" value="country" checked /> Country</label>
+					<label for="jazz"><input type="checkbox" id="jazz" name="music" value="jazz"/> Jazz</label>
+					<label for="pop"><input type="checkbox" id="pop" name="music" value="pop"/> Pop</label>
+				</fieldset>
+				<button type="submit">Submit</button>
+			</form>
+		</main>
+		<footer>
+			<h2>Image attributions</h2>
+			<ul>
+				<li>Cat pictures by Lei Lopez, used with permission.</li>
+			</ul>
+		</footer>
+	{% endblock %}
